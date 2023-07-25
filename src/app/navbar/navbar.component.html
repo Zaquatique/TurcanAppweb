@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button routerLink="" routerLinkActive="active">
+        <ion-img src="../../../assets/TURCAN_Logo.png" alt="Logo"></ion-img>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="( isLoggedIn$ | async)" routerLink="profil" routerLinkActive="active">Profil</ion-button>
+      <ion-button *ngIf="!(isLoggedIn$ | async)" routerLink="login" routerLinkActive="active">Connexion</ion-button>
+      <ion-button  routerLink="schedule" routerLinkActive="active">Horaires</ion-button>
+<!--      <ion-button routerLink="fiches-amiante" routerLinkActive="active">Fiches Amiante</ion-button>-->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

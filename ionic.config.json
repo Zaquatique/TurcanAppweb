@@ -1,0 +1,9 @@
+{
+  "name": "TurcanApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "4c487cec"
+}

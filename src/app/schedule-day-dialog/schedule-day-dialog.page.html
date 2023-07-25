@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{schedule.firstName}} - {{schedule.date | date:'fullDate'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Temps de trajet</ion-label>
+      <ion-note slot="end">{{schedule.travel_time}} heures</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Chargement</ion-label>
+      <ion-note slot="end">{{schedule.load_status === true ? 'oui' : 'non'}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Déchargement</ion-label>
+      <ion-note slot="end">{{schedule.unload_status === true ? 'oui' : 'non'}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Heure d'arrivée</ion-label>
+      <ion-note slot="end">{{schedule.arrival_time}}  h</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Heure de départ</ion-label>
+      <ion-note slot="end">{{schedule.departure_time}}  h</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Temps de pause</ion-label>
+      <ion-note slot="end">{{schedule.departure_time}} mins</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Panier</ion-label>
+      <ion-note slot="end">{{schedule.panier === true ? 'oui' : 'non'}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Grand Deplacement</ion-label>
+      <ion-note slot="end">{{schedule.grand_deplacement === true ? 'oui' : 'non'}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Lieu</ion-label>
+      <ion-note slot="end">{{schedule.work_location}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Temps de travail du jour</ion-label>
+      <ion-note slot="end">{{schedule.total_work_time}} heures</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Commentaire</ion-label>
+      <ion-note slot="end">{{schedule.commentaire}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Validé par l'administrateur</ion-label>
+      <ion-note slot="end" [ngClass]="{'validated': schedule.validated, 'not-validated': !schedule.validated}">{{schedule.validated === '1' ? 'oui' : 'non'}}</ion-note>
+    </ion-item>
+  </ion-list>
+
+  <ion-footer>
+    <ion-button expand="block" (click)="dismiss()">Fermer</ion-button>
+<!--    <ion-button  (click)="deleteEvent()">Supprimer</ion-button>-->
+<!--    <ion-button *ngIf="role === 'administrateur'" (click)="validateEvent()">Validé</ion-button>-->
+  </ion-footer>
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{schedule.firstName}} - {{schedule.date | date:'fullDate'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="editScheduleForm">
+    <ion-list>
+      <ion-item>
+        <ion-label>Temps de trajet</ion-label>
+        <ion-input type="text" formControlName="travel_time" placeholder="{{schedule.travel_time}} heures"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Chargement</ion-label>
+        <ion-checkbox formControlName="load_status" [(ngModel)]="schedule.load_status"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Déchargement</ion-label>
+        <ion-checkbox formControlName="unload_status" [(ngModel)]="schedule.unload_status"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Heure d'arrivée</ion-label>
+        <ion-input type="text" formControlName="arrival_time" placeholder="{{schedule.arrival_time}} h"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Heure de départ</ion-label>
+        <ion-input type="text" formControlName="departure_time" placeholder="{{schedule.departure_time}} h"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Temps de pause</ion-label>
+        <ion-input type="text" formControlName="break_time" placeholder="{{schedule.break_time}} mins"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Panier</ion-label>
+        <ion-checkbox formControlName="panier" [(ngModel)]="schedule.panier"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Grand Déplacement</ion-label>
+        <ion-checkbox formControlName="grand_deplacement" [(ngModel)]="schedule.grand_deplacement"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Lieu</ion-label>
+        <ion-input type="text" formControlName="work_location" placeholder="{{schedule.work_location}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Commentaire</ion-label>
+        <ion-input type="text" formControlName="commentaire" placeholder="{{schedule.commentaire}}"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-footer>
+      <ion-button expand="block" (click)="dismiss()">Fermer</ion-button>
+      <ion-button expand="block" [disabled]="editScheduleForm.invalid" (click)="modifySchedule(); dismiss()">Enregistrer les modifications</ion-button>
+    </ion-footer>
+  </form>
+</ion-content>

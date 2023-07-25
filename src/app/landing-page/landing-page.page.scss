@@ -1,0 +1,40 @@
+.landing-page {
+    --background: transparent;
+    position: relative;
+
+    #backgroundVideo {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+    }
+
+  .content-over-video {
+    height: 100%;
+    .card-title {
+      background: transparent ;
+      box-shadow: none ;
+      .landing-title {
+        font-size: 3.5em; // Changez la taille de police ici
+        color: #fff; // Changez la couleur de police ici
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // Cela donne une ombre au texte pour le rendre plus visible sur la vidéo
+      }
+      .landing-subtitle {
+        font-size: 1.5em; // Changez la taille de police ici
+        color: #fff; // Changez la couleur de police ici
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // Cela donne une ombre au texte pour le rendre plus visible sur la vidéo
+      }
+    }
+  }
+
+    .landing-title {
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .landing-subtitle {
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+  }

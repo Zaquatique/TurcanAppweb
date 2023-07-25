@@ -1,0 +1,63 @@
+.overlay {
+  margin-top: 50px;
+  padding: 20px;
+  position: fixed;
+  z-index: 1000;
+  background: rgb(255, 255, 255);
+  border: 1px solid #ffffff;
+  box-shadow: 5px 8px 20px rgba(0, 0, 0, 01);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay .entete {
+  text-align: center;
+
+  h2, h3 {
+    margin: 0;
+  }
+
+  #absence {
+    --ion-background-color: lightcoral;
+    --ion-background-color-hover: red;
+    --transition: background-color 0.3s ease-in-out;
+  }
+
+  #congé {
+    --ion-background-color: lightgreen;
+    --ion-background-color-hover: green;
+    --transition: background-color 0.3s ease-in-out;
+  }
+}
+
+.overlay form {
+  ion-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+.overlay ion-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+
+  button {
+    --ion-color-base: #000000;
+    --transition: background-color 0.3s ease-in-out;
+  }
+
+  #envoyer {
+    --ion-color-base: #5454ff;
+    --ion-color-base-hover: blue;
+    --ion-color-disabled: #afafaf;
+    --ion-text-color-disabled: #9a9999;
+  }
+
+  #fermer {
+    --ion-color-base: #f0da80;
+    --ion-color-base-hover: #ffb700;
+  }
+}

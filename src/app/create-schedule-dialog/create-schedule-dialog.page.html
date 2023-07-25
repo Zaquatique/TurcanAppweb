@@ -1,0 +1,45 @@
+<ion-content class="overlay">
+  <ion-header class="entete ">
+    <h2>Ajouter un nouvel horaire</h2>
+    <h3>{{date}}</h3>
+    <br>
+    <ion-button color="danger" id="absence" (click)="addScheduleAbsence(); dismiss()"><ion-icon name="alarm-sharp"></ion-icon>Absence</ion-button>
+    <ion-button color="success" id="congé" (click)="addScheduleConge(); dismiss()"><ion-icon name="airplane-sharp"></ion-icon> Congé</ion-button>
+  </ion-header>
+  <form [formGroup]="scheduleForm">
+    <ion-item>
+      <ion-input placeholder="Temps de voyage" formControlName="travel_time"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox formControlName="load_status" aria-label="Chargement">Chargement</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox formControlName="unload_status" aria-label="Déchargement">Déchargement</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Heure d'arrivée" formControlName="arrival_time"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Heure de départ" formControlName="departure_time"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Temps de pause (min)" formControlName="break_time"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox formControlName="panier" aria-label="Panier">Panier</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox formControlName="grand_deplacement" aria-label="Grand déplacement">Grand déplacement</ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Lieu de travail" formControlName="work_location"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Commentaire" formControlName="commentaire"></ion-input>
+    </ion-item>
+  </form>
+  <ion-footer>
+    <ion-button id="fermer" (click)="dismiss()">Fermer</ion-button>
+    <ion-button color="warning" [disabled]="scheduleForm.invalid" (click)="createSchedule(); dismiss()">Créer l'horaire <ion-icon name="chevron-forward-sharp"></ion-icon></ion-button>
+  </ion-footer>
+</ion-content>

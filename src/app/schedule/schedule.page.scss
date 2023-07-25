@@ -1,0 +1,58 @@
+ion-card{
+  margin: 10px;
+}
+
+ion-card-title{
+  font-size: 1.5em;
+  text-align: center;
+}
+
+ion-col{
+  text-align: center;
+}
+.data-badge {
+  display: block;
+  text-align: center;
+  font-size: 1em;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+
+ion-content {
+  ion-button {
+    margin: 20px;
+  }
+
+  ion-select {
+    margin: 20px;
+  }
+
+  #calendar {
+    margin: 10px;
+  }
+}
+
+.my-custom-calendar {
+  font-size: 0.8em;  // changez à la taille souhaitée
+}
+
+
+.custom-toolbar {
+  margin: 10px 0px;
+  .view-buttons, .navigation-buttons, .PDF {
+    display: flex;
+    flex-wrap: wrap;
+    ion-button {
+      flex: 1 0 auto;
+      font-size: 0.7em;  // Reduit la taille du texte dans les boutons
+      margin:3px;
+    }
+  }
+}
+
+
+
+
+

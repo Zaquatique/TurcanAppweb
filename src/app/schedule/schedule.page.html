@@ -1,0 +1,86 @@
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Informations de la vue actuelle</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-badge color="primary" class="data-badge">{{ totalWorkHours }}</ion-badge>
+            <p>Heures totales</p>
+          </ion-col>
+          <ion-col>
+            <ion-badge color="secondary" class="data-badge">{{ totalPanier }}</ion-badge>
+            <p>Panier</p>
+          </ion-col>
+          <ion-col>
+            <ion-badge color="tertiary" class="data-badge">{{ totalGrandDeplacement }}</ion-badge>
+            <p>Grand déplacement</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ currentViewTitle }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+
+
+      <ion-select  *ngIf="role === 'administrateur'" [(ngModel)]="selectedUser" (ngModelChange)="onUserChange()">
+        <ion-select-option [value]="null">Tous</ion-select-option>
+        <ion-select-option *ngFor="let name of userNames" [value]="name">
+          {{name}}
+        </ion-select-option>
+      </ion-select>
+
+
+
+      <div id="calendar" class="my-custom-calendar">
+
+        <div class="custom-toolbar" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+          <div class="navigation-buttons">
+            <ion-button size="small" (click)="goToPrevMonth()">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </ion-button>
+            <ion-button size="small" (click)="goToNextMonth()">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </ion-button>
+            <ion-button size="small" (click)="goToToday()">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </ion-button>
+          </div>
+          <div class="PDF">
+            <ion-button size="small"  (click)="generatePDF()">
+              <ion-icon name="print-outline"></ion-icon>
+            </ion-button>
+
+          </div>
+          <div class="view-buttons">
+            <ion-button size="small" (click)="changeView('listWeek')">Liste</ion-button>
+            <ion-button size="small" (click)="changeView('dayGridWeek')">Semaine</ion-button>
+            <ion-button size="small" (click)="changeView('dayGridMonth')">Mois</ion-button>
+          </div>
+
+        </div>
+
+
+
+
+        <full-calendar #calendar
+                       [options]="calendarOptions">
+        </full-calendar>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>

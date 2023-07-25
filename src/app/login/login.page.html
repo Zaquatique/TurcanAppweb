@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-card class="ion-text-center">
+    <img src="assets/TURCAN_Logo.png" class="profile-picture">
+    <ion-card-header>
+      <ion-card-title>Login</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Login</ion-label>
+          <ion-input aria-label="login" type="text" [(ngModel)]="user.login" name="login" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input aria-label="password" type="password" [(ngModel)]="user.password" name="password" required></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-button expand="full" color="primary" (click)="login()">Se connecter</ion-button>
+
+      <ion-text color="danger" *ngIf="errorMessage">
+        <p>{{ errorMessage }}</p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

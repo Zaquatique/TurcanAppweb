@@ -1,0 +1,14 @@
+ion-toolbar {
+  ion-buttons[slot="start"] {
+    ion-button {
+      ion-img {
+        // La hauteur est définie à 80% de la hauteur de la barre de navigation
+        height: 80%;
+        // Ajustez la largeur en fonction de la hauteur tout en conservant les proportions de l'image
+        width: auto;
+        // Centrer l'image verticalement dans le bouton
+        vertical-align: middle;
+      }
+    }
+  }
+}
